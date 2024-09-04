@@ -22,7 +22,7 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [];
+const initialState = JSON.parse(localStorage.getItem('cart')) ?? [];
 
 const cartSlice = createSlice({
   name: "cart",
@@ -33,9 +33,10 @@ const cartSlice = createSlice({
       state.push(action.payload);
     },
     deleteFromCart(state, action) {
-      // Filters out items that match the payload value (in this case, "Basmati Chawal")
-      return state.filter((item) => item !== action.payload);
+      // Filters out items that match the payload's id
+      return state.filter((item) => item.id !== action.payload.id);
     },
+    
     clearCart(state) {
       // Clears the entire cart
       return [];

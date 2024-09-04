@@ -40,6 +40,7 @@ import Filter from '../../components/filter/Filter';
 import ProductCards from '../../components/productCards/ProductCards';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, deleteFromCart } from '../../redux/CartSlice';
+import Location from '../../components/testimonial/Testimonial';
 
 function Home() {
   const dispatch = useDispatch();
@@ -52,6 +53,7 @@ function Home() {
       <HeroSection />
       <Filter />
       <ProductCards />
+      <Location />
     </Layout>
   );
 }

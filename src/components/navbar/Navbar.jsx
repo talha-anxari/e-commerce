@@ -5,6 +5,7 @@ import { BsFillCloudSunFill } from 'react-icons/bs';
 import { FiSun, FiMoon } from 'react-icons/fi'; // Sun and Moon icons for mode toggle
 import { Link } from 'react-router-dom';
 import { RxCross2 } from 'react-icons/rx'
+import { useSelector } from 'react-redux';
 
  function Navbar  () {
   const { mode, toggleMode } = useContext(myContext);
@@ -20,6 +21,7 @@ import { RxCross2 } from 'react-icons/rx'
     localStorage.clear('user');
     window.location.href = ('/signIn')
   }
+  const cartItems = useSelector((state) => state.cart);
   return (
     <div className="bg-white sticky top-0 z-50">
       {/* Mobile Menu */}
@@ -212,7 +214,7 @@ import { RxCross2 } from 'react-icons/rx'
                       className="ml-2 text-sm font-medium"
                       style={{ color: mode === 'dark' ? 'white' : 'black' }}
                     >
-                      0
+                      {cartItems.length}
                     </span>
                     <span className="sr-only">items in cart, view bag</span>
                   </Link>

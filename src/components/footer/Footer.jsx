@@ -115,21 +115,33 @@ export default function Footer() {
             </h2>
             <nav className="list-none mb-10">
               <li>
+              <h4
+              className="title-font font-medium text-gray-900 tracking-widest text-sm"
+              style={{ color: mode === "dark" ? "white" : "" }}
+            >
+              Shop Keeper
+            </h4>
                 <Link
                   to={"/privacypolicy"}
                   className="text-gray-600 hover:text-gray-800"
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
-                  Privacy Policy
+                  Usman Ahmad
                 </Link>
               </li>
               <li>
+              <h4
+              className="title-font font-medium text-gray-900 tracking-widest text-sm"
+              style={{ color: mode === "dark" ? "white" : "" }}
+            >
+              Address
+            </h4>
                 <Link
                   to={"/shipping"}
                   className="text-gray-600 hover:text-gray-800"
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
-                  Shipping Information
+                  Hussainabad
                 </Link>
               </li>
               <li>
